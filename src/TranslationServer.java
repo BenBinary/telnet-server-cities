@@ -152,21 +152,25 @@ public class TranslationServer {
         while ( ! done) {
             String str = reader.readLine();
             if (str == null) {
+                
                 done = true;
                 System.out.println("Null received");
-            }
-            else if (str.trim().equals("City.*")) {
-             
-                out.println("Translation: " + get_city(str));
+                
+            } else if (str.matches("City.*")) {
+                
+                out.print("City found");
                 
                 str = str.replace("City ", "");
+                out.println("Translation: " + get_city(str));
                 
                 if (str.trim().equals("BYE"))
                     done = true;
               
             }
-            else if (str.trim().equals(Keywords.Airports.toString() + ".*")) {
+            else if (str.matches("Airports" + ".*")) {
              
+                out.print("Airports found");
+                
                 str = str.replace(Keywords.Airports + " ", "");
                 
                 System.out.println("found");
