@@ -15,9 +15,9 @@ public class EntityClass {
     String ent_de_dat;
     String ent_de_gender;
     int city_ref;
-    Keywords type;
+    String type;
 
-    public EntityClass(String ent_de_nom, String ent_de_gen, String ent_de_acc, String ent_de_dat, String ent_de_gender, int city_ref, Keywords type) {
+    public EntityClass(String ent_de_nom, String ent_de_gen, String ent_de_acc, String ent_de_dat, String ent_de_gender, int city_ref, String type) {
         this.ent_de_nom = ent_de_nom;
         this.ent_de_gen = ent_de_gen;
         this.ent_de_acc = ent_de_acc;

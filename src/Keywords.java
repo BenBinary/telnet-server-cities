@@ -14,6 +14,6 @@ public enum Keywords {
     Airports,
     Hospitals,
     Universities,
-    Sights
+    Sights;
     
 }

@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,94 +15,118 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class TranslationServer {
-    
+
     private static ArrayList<Cityclass> ACL = new ArrayList<>();
-    private static HashMap<String, String> Translations = new HashMap<String, String>();
-    static {
-        Translations.put("car", "blub");
-        Translations.put("drive", "οδηγώ");
-        Translations.put("fruits", "φρούτα");
-        Translations.put("orange", "πορτοκάλι");
-        Translations.put("apple", "μήλο");
-        Translations.put("apricot", "βερίκοκο");
-        Translations.put("pear", "αχλάδι");
-        Translations.put("vegetables", "λαχανικά");
-        Translations.put("tomato", "ντομάτα");
-        Translations.put("eggplant", "μελιτζάνα");
-        Translations.put("meat", "κρέας");
-        Translations.put("pork", "χοιρινό");
-        Translations.put("veal", "μοσχάρι");
-        Translations.put("beef", "μοσχάρι");
-        Translations.put("eat", "τρώγω");
-    }
-    
-    private static String get_translation(String original) {
-        return Translations.get(original);
-    }
-    
+    private static ArrayList<EntityClass> ALE = new ArrayList<>();
+
     /**
      * Fills the array with cities by reading it from the cities.txt file
      */
     private static void fill_cities() {
-        
+
         try {
-             
+
             File cityfile = new File("res/cities.txt");
-            
+
             if (cityfile.exists()) {
-                System.out.println("it exists");
+
+                Scanner myreader = new Scanner(cityfile);
+
+                while (myreader.hasNext()) {
+
+                    String raw = myreader.nextLine();
+                    String[] arr = raw.split("#");
+                    Cityclass city = new Cityclass(Integer.valueOf(arr[0]), arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+                    ACL.add(city);
+
+                }
+
+                myreader.close();
+
             }
-            System.out.println("File " + cityfile.getAbsolutePath());
-            // C:\Users\FHBBook\Documents\NetBeansProjects\SrvSocket1
-            
-            
-            Scanner myreader = new Scanner(cityfile);
-            
-            while (myreader.hasNext()) {
-                
-                String raw = myreader.nextLine();
-                String[] arr = raw.split("#");
-                
-                System.out.println(arr[1]);
-                Cityclass city = new Cityclass(Integer.valueOf(arr[0]), arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);    
-                ACL.add(city);
-                
-            } 
-            
-            myreader.close(); 
-            
+
         } catch (FileNotFoundException fnfe) {
-            
+
             System.out.println(fnfe.getLocalizedMessage());
-            
-        } 
-     
-        
+        }
+
     }
     
+    /**
+     * Read the entities out of a text-file
+     */
+    private static void fill_entities() {
+
+        try {
+
+            File cityfile = new File("res/namedEntities.txt");
+
+            if (cityfile.exists()) {
+
+                Scanner myreader = new Scanner(cityfile);
+
+                while (myreader.hasNext()) {
+
+                    String raw = myreader.nextLine();
+                    String[] arr = raw.split("#");
+                    EntityClass entity = new EntityClass(arr[0], arr[1], arr[2], arr[3], arr[4], Integer.valueOf(arr[5]), arr[6]);
+
+                    ALE.add(entity);
+
+                }
+
+                myreader.close();
+
+            }
+
+        } catch (FileNotFoundException fnfe) {
+
+            System.out.println(fnfe.getLocalizedMessage());
+        }
+
+    }
+
     private static String get_city(String city) {
-     
 
         for (Cityclass singleCity : ACL) {
-            
             if (singleCity.city_nom.matches(city)) {
                 return singleCity.toString();
-            } 
+            }
         }
-     
+
+        return "";
+    }
+    
+    /**
+     * Is looking up entity
+     * 
+     * @param entity
+     * @return 
+     */
+    private static String get_entity(String entity) {
+
+        for (EntityClass singleEntity : ALE) {
+            if (singleEntity.ent_de_nom.matches(entity)) {
+                
+                
+                return singleEntity.toString();
+            }
+        }
+
         return "";
     }
 
     public static int ECHOPORT = 6789;
-    
+
     public static void main(String argv[]) {
 
         fill_cities();
-        
+        fill_entities();
+
         ServerSocket s = null;
         try {
             s = new ServerSocket(ECHOPORT);
-        } catch(IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
             System.exit(1);
         }
@@ -115,78 +140,77 @@ public class TranslationServer {
             }
             try {
                 handleSocket(incoming);
-            } catch(IOException e) {
+            } catch (IOException e) {
                 System.out.println("IOException when handleSocket " + e);
             }
             try {
                 incoming.close();
-            } catch(IOException e) {
+            } catch (IOException e) {
                 // no message required
             }
         }
     }
-    
+
     public static void handleSocket(Socket incoming) throws IOException {
-        
-        BufferedReader reader =
-            new BufferedReader(new InputStreamReader(
-            incoming.getInputStream()));
-        
+
+        BufferedReader reader
+                = new BufferedReader(new InputStreamReader(
+                        incoming.getInputStream()));
+
         // Changed cp to 850 for western european standards
-        PrintStream out = new PrintStream(incoming.getOutputStream(),true,"cp850");    
+        PrintStream out = new PrintStream(incoming.getOutputStream(), true, "cp850");
 
         out.println("Hello. Enter BYE to exit");
         boolean done = false;
-        
+
         // Add all keywords to the HashSet
         Set<String> keywords = new HashSet<String>();
-    
+
         /*
         for (String k : Keywords.) {
             
         } */
-        
-        
         keywords.add(Keywords.Airports.toString());
-        
-        while ( ! done) {
+
+        while (!done) {
             String str = reader.readLine();
             if (str == null) {
-                
+
                 done = true;
                 System.out.println("Null received");
-                
+
             } else if (str.matches("City.*")) {
-                
+
                 out.print("City found");
-                
+
                 str = str.replace("City ", "");
                 out.println("Translation: " + get_city(str));
-                
-                if (str.trim().equals("BYE"))
+
+                if (str.trim().equals("BYE")) {
                     done = true;
-              
-            }
-            else if (str.matches("Airports" + ".*")) {
-             
+                }
+
+            } else if (str.matches("Airports" + ".*")) {
+
                 out.print("Airports found");
-                
+
                 str = str.replace(Keywords.Airports + " ", "");
-                
+
                 System.out.println("found");
-                
+
                 out.println("Translation: " + get_city(str));
-                
-                if (str.trim().equals("BYE"))
+
+                if (str.trim().equals("BYE")) {
                     done = true;
-              
-            }
-            else {
+                }
+
+            } else {
                 //out.println("Translation: " + get_translation(str));
                 out.println("Translation: " + get_city(str));
-                
-                if (str.trim().equals("BYE"))
+
+                if (str.trim().equals("BYE")) {
                     done = true;
+                }
             }
         }
         incoming.close();
