@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class TranslationServer {
     
@@ -130,19 +132,44 @@ public class TranslationServer {
             new BufferedReader(new InputStreamReader(
             incoming.getInputStream()));
         
+        // Changed cp to 850 for western european standards
         PrintStream out = new PrintStream(incoming.getOutputStream(),true,"cp850");    
 
         out.println("Hello. Enter BYE to exit");
         boolean done = false;
+        
+        // Add all keywords to the HashSet
+        Set<String> keywords = new HashSet<String>();
+    
+        /*
+        for (String k : Keywords.) {
+            
+        } */
+        
+        
+        keywords.add(Keywords.Airports.toString());
+        
         while ( ! done) {
             String str = reader.readLine();
             if (str == null) {
                 done = true;
                 System.out.println("Null received");
             }
-            else if (str.matches("City.*")) {
+            else if (str.trim().equals("City.*")) {
              
+                out.println("Translation: " + get_city(str));
+                
                 str = str.replace("City ", "");
+                
+                if (str.trim().equals("BYE"))
+                    done = true;
+              
+            }
+            else if (str.trim().equals(Keywords.Airports.toString() + ".*")) {
+             
+                str = str.replace(Keywords.Airports + " ", "");
+                
+                System.out.println("found");
                 
                 out.println("Translation: " + get_city(str));
                 
@@ -152,7 +179,7 @@ public class TranslationServer {
             }
             else {
                 //out.println("Translation: " + get_translation(str));
-                // out.println("Translation: " + get_city(str));
+                out.println("Translation: " + get_city(str));
                 
                 if (str.trim().equals("BYE"))
                     done = true;
