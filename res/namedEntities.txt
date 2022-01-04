@@ -3,3 +3,5 @@ der^Schlossplatz#des^Schlossplatzes#der^Schlossplatz#dem^Schlossplatz#maskulin#1
 die^Staatsgalerie#der^Staatsgalerie#die^Staatsgalerie#der^Staatsgalerie#feminin#1#Museum
 die^Fachhochschule#der^Fachhochschule#die^Fachhochschule#der^Fachhochschule#feminin#2#Universities
 der^Flughafen^Munchen#des^Flughafens^Munchen#den^Flughafen^Munchen#dem^Flughafen^Munchen#maskulin#4#Airports
+der^Flughafen^Stuttgart#des^Flughafens^Stuttgart#den^Flughafen^Stuttgart#dem^Flughafen^Stuttgart#maskulin#1#Airports
+der^Flughafen^Stuttgart#des^Flughafens^Stuttgart#den^Flughafen^Stuttgart#dem^Flughafen^Stuttgart#maskulin#1#Airports

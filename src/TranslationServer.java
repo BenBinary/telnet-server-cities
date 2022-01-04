@@ -86,6 +86,12 @@ public class TranslationServer {
 
     }
 
+    /**
+     * Get the city which is needed.
+     * 
+     * @param city
+     * @return 
+     */
     private static String get_city(String city) {
 
         for (Cityclass singleCity : ACL) {
@@ -95,6 +101,51 @@ public class TranslationServer {
         }
 
         return "";
+    }
+    
+    /**
+     * Filters all entities for the mentioned Parameters.
+     * 
+     * @param entity
+     * @param cityID
+     * @return 
+     */
+    private static ArrayList<EntityClass> filterEntities(String entity, int cityID) {
+        
+        ArrayList<EntityClass> filteredEntities = new ArrayList<>();
+        
+        for (EntityClass singleEntity : ALE) {
+            
+            // Checks if it's certain entity
+            if (singleEntity.type.matches(entity)) {
+                
+                // Checks if it's the specified City
+                if (singleEntity.city_ref == cityID) {
+                    filteredEntities.add(singleEntity);
+                }
+                
+            }
+        }
+        
+        return filteredEntities;
+        
+    }
+    
+    /**
+     * Get the city order Number, which is assigned to the city
+     * 
+     * @param city
+     * @return 
+     */
+     private static int get_cityID(String city) {
+
+        for (Cityclass singleCity : ACL) {
+            if (singleCity.city_nom.matches(city)) {
+                return singleCity.getOrderNumber();
+            }
+        }
+
+        return 0;
     }
     
     /**
@@ -196,14 +247,21 @@ public class TranslationServer {
                 // 1. find the city from ALC by the numeric value of the ref-attribute
                 str = str.replace(Keywords.Airports + " ", "");
                 String city = str.replace(Keywords.Airports + " ", "");
-                out.println("Translation: " + get_city(city));
+                int cityID = get_cityID(city);
+                // out.println("Translation: " + get_city(city));
                 
                 // 2. All attributs of ALE with the attribute (Airport) and the requested city
-                out.println("Entities: " + get_entity("Airports"));
+                ArrayList<EntityClass> filteredCities = null;
+                filteredCities = filterEntities("Airports", cityID);
                 // TODO:
                 
-                // 3. Return all mathed attributes of ALE 
-
+                // 3. Return all mathed attributes of ALE
+                int j = 0;
+                for (EntityClass entity : filteredCities) {
+                    j++;
+                    
+                    out.println("Filtered Entites Number " + j + ": " +  entity.toString());
+                }
             
 
                 if (str.trim().equals("BYE")) {

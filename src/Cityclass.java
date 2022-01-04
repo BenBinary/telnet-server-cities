@@ -31,6 +31,12 @@ public class Cityclass {
     public String toString() {
         return city_nom + " " + city_gen + " " + city_acc + " " + city_dat + " " + city_english + " " + city_state;
     }
+
+    public int getOrderNumber() {
+        return orderNumber;
+    }
+    
+    
     
     
     
