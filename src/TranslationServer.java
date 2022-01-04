@@ -106,7 +106,7 @@ public class TranslationServer {
     private static String get_entity(String entity) {
 
         for (EntityClass singleEntity : ALE) {
-            if (singleEntity.ent_de_nom.matches(entity)) {
+            if (singleEntity.type.matches(entity)) {
                 
                 
                 return singleEntity.toString();
@@ -191,14 +191,20 @@ public class TranslationServer {
                 }
 
             } else if (str.matches("Airports" + ".*")) {
-
-                out.print("Airports found");
-
+                
+                
+                // 1. find the city from ALC by the numeric value of the ref-attribute
                 str = str.replace(Keywords.Airports + " ", "");
+                String city = str.replace(Keywords.Airports + " ", "");
+                out.println("Translation: " + get_city(city));
+                
+                // 2. All attributs of ALE with the attribute (Airport) and the requested city
+                out.println("Entities: " + get_entity("Airports"));
+                // TODO:
+                
+                // 3. Return all mathed attributes of ALE 
 
-                System.out.println("found");
-
-                out.println("Translation: " + get_city(str));
+            
 
                 if (str.trim().equals("BYE")) {
                     done = true;
