@@ -95,7 +95,7 @@ public class TranslationServer {
     private static String get_city(String city) {
 
         for (Cityclass singleCity : ACL) {
-            if (singleCity.city_nom.matches(city)) {
+            if (singleCity.getCity_nom().matches(city)) {
                 return singleCity.toString();
             }
         }
@@ -140,7 +140,7 @@ public class TranslationServer {
      private static int get_cityID(String city) {
 
         for (Cityclass singleCity : ACL) {
-            if (singleCity.city_nom.matches(city)) {
+            if (singleCity.getCity_nom().matches(city)) {
                 return singleCity.getOrderNumber();
             }
         }
@@ -255,8 +255,7 @@ public class TranslationServer {
                 // 2. All attributs of ALE with the attribute (Airport) and the requested city
                 ArrayList<EntityClass> filteredCities = null;
                 filteredCities = filterEntities("Airports", cityID);
-                // TODO:
-                
+    
                 // 3. Return all mathed attributes of ALE
                 int j = 0;
                 for (EntityClass entity : filteredCities) {

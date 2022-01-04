@@ -32,6 +32,14 @@ public class Cityclass {
         return city_nom + " " + city_gen + " " + city_acc + " " + city_dat + " " + city_english + " " + city_state;
     }
 
+    // Removing ^ by returnin
+    public String getCity_nom() {
+        
+        return city_nom.replace("^", "");
+    }
+    
+    
+
     public int getOrderNumber() {
         return orderNumber;
     }
