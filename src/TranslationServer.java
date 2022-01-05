@@ -216,15 +216,13 @@ public class TranslationServer {
 
         // Add all keywords to the HashSet
         Set<String> keywords = new HashSet<String>();
-        
-        
-
-        /*
-        for (String k : Keywords.) {
-            
-        } */
+ 
         keywords.add(Keywords.Airports.toString());
         keywords.add(Keywords.Sights.toString());
+        keywords.add(Keywords.Businesses.toString());
+        keywords.add(Keywords.Hospitals.toString());
+        keywords.add(Keywords.Universities.toString());
+        keywords.add(Keywords.Museums.toString());
 
         while (!done) {
             String str = reader.readLine();
@@ -244,44 +242,22 @@ public class TranslationServer {
                     done = true;
                 }
 
-            } else if (str.matches(Keywords.Airports.toString() + ".*")) {
+            } else if (str.matches(keywords + ".*")) {
+                
+                String[] splitStr = str.split(" ");
+                
+                String entityType = splitStr[0];
                 
                 // 1. find the city from ALC by the numeric value of the ref-attribute
-                str = str.replace(Keywords.Airports + " ", "");
-                String city = str.replace(Keywords.Airports + " ", "");
+                str = str.replace(entityType + " ", "");
+                String city = str.replace(entityType + " ", "");
                 int cityID = get_cityID(city);
                 // out.println("Translation: " + get_city(city));
                 
                 // 2. All attributs of ALE with the attribute (Airport) and the requested city
                 ArrayList<EntityClass> filteredCities = null;
-                filteredCities = filterEntities("Airports", cityID);
+                filteredCities = filterEntities(entityType, cityID);
     
-                // 3. Return all mathed attributes of ALE
-                int j = 0;
-                for (EntityClass entity : filteredCities) {
-                    j++;
-                    
-                    out.println("Filtered Entites Number " + j + ": " +  entity.toString());
-                }
-            
-
-                if (str.trim().equals("BYE")) {
-                    done = true;
-                }
-
-            } else if (str.matches(Keywords.Sights.toString() + ".*")) {
-                
-                // 1. find the city from ALC by the numeric value of the ref-attribute
-                str = str.replace(Keywords.Sights + " ", "");
-                String city = str.replace(Keywords.Sights + " ", "");
-                int cityID = get_cityID(city);
-                // out.println("Translation: " + get_city(city));
-                
-                // 2. All attributs of ALE with the attribute (Airport) and the requested city
-                ArrayList<EntityClass> filteredCities = null;
-                filteredCities = filterEntities("Sights", cityID);
-                // TODO:
-                
                 // 3. Return all mathed attributes of ALE
                 int j = 0;
                 for (EntityClass entity : filteredCities) {
