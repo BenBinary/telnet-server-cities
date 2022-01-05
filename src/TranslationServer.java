@@ -20,7 +20,10 @@ public class TranslationServer {
     private static ArrayList<EntityClass> ALE = new ArrayList<>();
 
     /**
-     * Fills the array with cities by reading it from the cities.txt file
+     * 
+     * Fills the array with cities by reading it from the cities.txt file.
+     * Executed in the beginning of executing the file.
+     * 
      */
     private static void fill_cities() {
 
@@ -53,7 +56,9 @@ public class TranslationServer {
     }
     
     /**
-     * Read the entities out of a text-file
+     * Read the entities out of a text-file.
+     * Executed at every beginnning of running a file.
+     * 
      */
     private static void fill_entities() {
 
@@ -87,7 +92,7 @@ public class TranslationServer {
     }
 
     /**
-     * Get the city which is needed.
+     * Get the city which is requested.
      * 
      * @param city
      * @return 
@@ -148,24 +153,7 @@ public class TranslationServer {
         return 0;
     }
     
-    /**
-     * Is looking up entity
-     * 
-     * @param entity
-     * @return 
-     */
-    private static String get_entity(String entity) {
 
-        for (EntityClass singleEntity : ALE) {
-            if (singleEntity.type.matches(entity)) {
-                
-                
-                return singleEntity.toString();
-            }
-        }
-
-        return "";
-    }
 
     public static int ECHOPORT = 6789;
 
@@ -202,6 +190,14 @@ public class TranslationServer {
         }
     }
 
+    /**
+     * 
+     * Handles the command line by accessing it via Telnet on Port 6789.
+     * 
+     * 
+     * @param incoming
+     * @throws IOException 
+     */
     public static void handleSocket(Socket incoming) throws IOException {
 
         BufferedReader reader

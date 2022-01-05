@@ -5,6 +5,8 @@
 
 /**
  *
+ * Class which stores all the relevant informations for the entities.
+ * 
  * @author FHBBook
  */
 public class EntityClass {

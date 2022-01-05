@@ -4,7 +4,9 @@
  */
 
 /**
- *
+ * Here are the keywords stored which are needed 
+ * the retrieve the units via telnet.
+ * 
  * @author FHBBook
  */
 public enum Keywords {

@@ -5,6 +5,8 @@
 
 /**
  *
+ * Class which stores all the relevant files for the cities.
+ * 
  * @author FHBBook
  */
 public class Cityclass {
