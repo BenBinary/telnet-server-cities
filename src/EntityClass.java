@@ -29,8 +29,19 @@ public class EntityClass {
 
     @Override
     public String toString() {
-       
-        return this.ent_de_nom + " " + this.ent_de_gen;
+        
+        String s;
+        s = "Nominative: " + this.ent_de_nom + 
+                " || Genetive: " + this.ent_de_gen + 
+                " || Accusative: " + this.ent_de_acc + 
+                " || Dative: " + this.ent_de_dat + 
+                " || Gender: " + this.ent_de_gender +
+                " || City-Ref: " + this.city_ref + 
+                " || Type: " + this.type;
+        
+        s = s.replace("^", " ");
+        
+        return s;
         
     }
     

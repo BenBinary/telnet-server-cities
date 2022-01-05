@@ -272,7 +272,7 @@ public class TranslationServer {
                 }
 
             } else {
-                //out.println("Translation: " + get_translation(str));
+             
                 out.println("Translation: " + get_city(str));
 
                 if (str.trim().equals("BYE")) {

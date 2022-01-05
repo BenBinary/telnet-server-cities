@@ -29,7 +29,19 @@ public class Cityclass {
 
     @Override
     public String toString() {
-        return city_nom + " " + city_gen + " " + city_acc + " " + city_dat + " " + city_english + " " + city_state;
+        
+        String s;
+        
+        s = "Nominativ: " + city_nom + 
+            "|| Genetive: " + city_gen + 
+                " || Accusative: " + city_acc + 
+                " || Dative: " + city_dat + 
+                " || English Name: " + city_english + 
+                " || State of the city: " + city_state;
+        
+        s = s.replace("^", " ");
+        
+        return s;
     }
 
     // Removing ^ by returnin
