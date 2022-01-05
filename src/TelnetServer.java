@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class TranslationServer {
+public class TelnetServer {
 
     private static ArrayList<Cityclass> ACL = new ArrayList<>();
     private static ArrayList<EntityClass> ALE = new ArrayList<>();
