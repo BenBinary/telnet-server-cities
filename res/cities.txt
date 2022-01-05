@@ -5,3 +5,6 @@
 5#^Duesseldorf#^Düsseldorfs#^Düsseldorf#^Düsseldorf#Dusseldorf#Nordrhein^Westfalen
 6#^Muenchen#^Münchens#^München#^München#Munich#Bayern
 7#^Koeln#^Kölns#^Köln#^Köln#Collogne#Nordrhein^Westfalen
+8#^Hamburg#^Hamburgs#^Hamburg#^Hamburg#Hamburg#Hamburg
+9#^Hannover#^Hannover#^Hannover#^Hannover#Hannover#Niedersachsen
+
