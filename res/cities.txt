@@ -7,7 +7,3 @@
 7#^Koeln#^Kölns#^Köln#^Köln#Collogne#Nordrhein^Westfalen
 8#^Hamburg#^Hamburgs#^Hamburg#^Hamburg#Hamburg#Hamburg
 9#^Hannover#^Hannover#^Hannover#^Hannover#Hannover#Niedersachsen
-<<<<<<< HEAD
-
-=======
->>>>>>> main
