@@ -6,7 +6,7 @@
 - Registration number: 21390260
 - Department: Informatics
 - School: University of West Attica (UniWA)
-- Software used: Apache NetBeans IDE 12.5, jdk8 and the Windows Telnet Client
+- Software used: Apache NetBeans IDE 12.5, jdk14 and the Windows Telnet Client
 - The used code page is 850 - it's a code page where the most greek letters are removed
 
 ### Running the application
