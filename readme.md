@@ -15,8 +15,8 @@
 6) Use the commands which are below
 7) To Stop the service use `java -jar telnet-server-cities.jar stop`
 
+<img src="https://github.com/BenBinary/telnet-server-cities/blob/407480998f63085d576c1aef4dd9ea9776b983c6/docs/pictures/Start_Programm.JPG" width="100" height="100">
 
-![Start the programm](https://github.com/BenBinary/telnet-server-cities/blob/407480998f63085d576c1aef4dd9ea9776b983c6/docs/pictures/Start_Programm.JPG | width=100)
 
 ### Possible Commands
 
