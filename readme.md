@@ -16,16 +16,16 @@
 7) To Stop the service use `java -jar telnet-server-cities.jar stop`
 
 ### Some Screenshots 
-Directory where everything is stored:
+Directory where everything is stored: </br>
 <img alt="Directory" src="https://github.com/BenBinary/telnet-server-cities/blob/74b9eeced9cac67681ed005624d620d69bb65e4c/docs/pictures/dir.JPG" height="200">
 
-Command to start the programm:
+Command to start the programm: </br>
 <img alt="Start the program" src="https://github.com/BenBinary/telnet-server-cities/blob/407480998f63085d576c1aef4dd9ea9776b983c6/docs/pictures/Start_Programm.JPG" height="200">
 
-Access the service:
+Access the service: </br>
 <img alt="Access the service" src="https://github.com/BenBinary/telnet-server-cities/blob/e025566fff34d713757444ec6d63c82d3312d024/docs/pictures/access_Programm.JPG" height="200">
 
-Use the service:
+Use the service: </br>
 <img alt="Use the service" src="https://github.com/BenBinary/telnet-server-cities/blob/e025566fff34d713757444ec6d63c82d3312d024/docs/pictures/use_Programm.JPG" height="200">
 
 
