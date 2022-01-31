@@ -35,7 +35,7 @@ public class Cityclass {
         String s;
         
         s = "Nominativ: " + city_nom + 
-            "|| Genetive: " + city_gen + 
+                " || Genetive: " + city_gen + 
                 " || Accusative: " + city_acc + 
                 " || Dative: " + city_dat + 
                 " || English Name: " + city_english + 
