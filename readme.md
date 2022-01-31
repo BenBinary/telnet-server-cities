@@ -17,9 +17,10 @@
 
 
 <img alt="Directory" src="https://github.com/BenBinary/telnet-server-cities/blob/74b9eeced9cac67681ed005624d620d69bb65e4c/docs/pictures/dir.JPG" height="200">
+Directory where everything is stored.
 
 <img alt="Start the program" src="https://github.com/BenBinary/telnet-server-cities/blob/407480998f63085d576c1aef4dd9ea9776b983c6/docs/pictures/Start_Programm.JPG" height="200">
-
+Command to start the programm.
 
 ### Possible Commands
 
