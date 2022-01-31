@@ -1,0 +1,17 @@
+das^Brandenburger^Tor#des^Brandenburger^Tores#das^Brandenburger^Tor#dem^Brandenburger^Tor#neutrum#3#Sights
+der^Schlossplatz#des^Schlossplatzes#der^Schlossplatz#dem^Schlossplatz#maskulin#1#Sights
+die^Staatsgalerie#der^Staatsgalerie#die^Staatsgalerie#der^Staatsgalerie#feminin#1#Museums
+das^Lindenmuseum#des^Lindenmuseums#das^Lindenmuseum#dem^Lindenmuseum#neutrum#1#Museums
+die^Fachhochschule#der^Fachhochschule#die^Fachhochschule#der^Fachhochschule#feminin#2#Universities
+der^Flughafen^Munchen#des^Flughafens^Munchen#den^Flughafen^Munchen#dem^Flughafen^Munchen#maskulin#6#Airports
+der^Flughafen^Stuttgart#des^Flughafens^Stuttgart#den^Flughafen^Stuttgart#dem^Flughafen^Stuttgart#maskulin#1#Airports
+die^Universität^zu^Köln#der^Universität^zu^Köln#die^Universität^zu^Köln#der^Universität^zu^Köln#maskulin#7#Universities
+die^Technische^Hochschule^Köln#der^Technischen^Hochschule^Köln#die^Technische^Hochschule^Köln#der^Technischen^Hochschule^Köln#maskulin#7#Universities
+^Airbus#^Airbus#^Airbus#^Airbus#neutrum#8#Business
+die^deutsche^Bahn#der^deutschen^Bahn#die^deutsche^Bahn#der^deutschen^Bahn#feminin#8#Business
+der^Main#des^Mains#den^Main#dem^Main#maskulin#4#Sights
+die^Zeil#der^Zeil#die^Zeil#der^Zeil#feminin#4#Sights
+das^Bodemuseum#des^Bodemuseums#das^Bodemuseum#dem^Bodemuseum#neutrum#3#Museums
+das^Humboldtforum#des^Humboldtforum#das^Humboldtforum#dem^Humboldtforum#feminin#3#Museums
+die^medizinische^Hochschule#der^medizinischen^Hochschule#die^medizinische^Hochschule#der^medizinischen^Hochschule#feminin#9#Hospitals
+das^Vinzenzkrankenhaus#des^Vinzenzkrankenhauses#das^Vinzenzkrankenhaus#dem^Vinzenzkrankenhaus#neutrum#9#Hospitals

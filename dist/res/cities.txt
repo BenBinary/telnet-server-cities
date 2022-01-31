@@ -1,0 +1,9 @@
+1#^Stuttgart#^Stuttgarts#^Stuttgart#^Stuttgart#Stuttgart#Baden-Württemberg
+2#^Dortmund#^Dortmunds#^Dortmund#^Dortmund#Dortmund#Nordrhein^Westfalen
+3#^Berlin#^Berlins#^Berlin#^Berlin#Berlin#Berlin
+4#^Frankfurt#^Frankfurts#^Frankfurt#^Frankfurt#Frankfurt#Hessen
+5#^Duesseldorf#^Düsseldorfs#^Düsseldorf#^Düsseldorf#Dusseldorf#Nordrhein^Westfalen
+6#^Muenchen#^Münchens#^München#^München#Munich#Bayern
+7#^Koeln#^Kölns#^Köln#^Köln#Collogne#Nordrhein^Westfalen
+8#^Hamburg#^Hamburgs#^Hamburg#^Hamburg#Hamburg#Hamburg
+9#^Hannover#^Hannover#^Hannover#^Hannover#Hannover#Niedersachsen
