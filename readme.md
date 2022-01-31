@@ -7,8 +7,8 @@
 - IDE used: Apache NetBeans IDE 12.5 and jdk8
 
 ### Running the application
-1) Navigate in your terminal to the directory of your project and there into the subfolder `/dist`
-2) **Important** make sure that this directory contains res folder 
+1) Navigate in your terminal to the directory of your project and there into the subfolder `/res`
+2) **!Important!** make sure that this directory contains res folder 
 3) Run the command `java -jar telnet-server-cities.jar`
 4) Make sure that the telnet function is ready.
 5) Open another terminal window and run the command `telnet localhost 6789` 
