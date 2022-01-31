@@ -3,8 +3,11 @@
 ## About
 - Project from Benedikt Kurz at University West Attica for the module 'Network Programming' in the fall term 2021/22. 
 - E-Mail: bekur002@stud.fh-dortmund.de
-- Department: Computer Science at University of West Attica
-- IDE used: Apache NetBeans IDE 12.5 and jdk8
+- Registration number: 21390260
+- Department: Informatics
+- School: University of West Attica (UniWA)
+- Software used: Apache NetBeans IDE 12.5, jdk8 and the Windows Telnet Client
+- The used code page is 850 - it's a code page where the most greek letters are removed
 
 ### Running the application
 1) Navigate in your terminal to the directory of your project and there into the subfolder `/res`
@@ -27,7 +30,6 @@ Access the service: </br>
 
 Use the service: </br>
 <img alt="Use the service" src="https://github.com/BenBinary/telnet-server-cities/blob/e025566fff34d713757444ec6d63c82d3312d024/docs/pictures/use_Programm.JPG" height="200">
-
 
 
 ### Possible Commands
